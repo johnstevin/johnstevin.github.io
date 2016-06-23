@@ -1,21 +1,15 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
 title: 空城旧梦
 email: stevin.john@qq.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >
+  人的一生要疯狂一次，无论是为一个人，一段情，一段旅途，或一个梦想。
+  我们要敢于背上超出自己预料的包袱，努力之后，你会发现自己要比想象的优秀很多。
+  放下你的三分钟热度，放空你禁不住诱惑的大脑，放开你容易被任何事物吸引的眼睛，放淡你什么都想聊两句八卦的嘴巴，静下心来好好做你该做的事，该好好努力了！
+  记住一句话：越努力，越幸运。
 baseurl: "" # the subpath of your site, e.g. /blog
 #LocalServerHostname: "jekyll.cc"
 #url: "http://192.168.33.10:4000" # the base hostname & protocol for your site
-twitter_username: johnstevin
+#twitter_username: johnstevin
 github_username:  johnstevin
 
 # Build settings
