@@ -33,23 +33,19 @@ email: stevin.john@qq.com
 navs:
   -
     href: /
-    label: 首页
+    label: Home
 
   -
     href: /categories/
-    label: 分类
-
-  -
-    href: /wiki/
-    label: 维基
+    label: Categories
 
   -
     href: /links/
-    label: 链接
+    label: Links
 
   -
     href: /about/
-    label: 关于
+    label: About
 
 # ---------------- #
 #      Jekyll      #
