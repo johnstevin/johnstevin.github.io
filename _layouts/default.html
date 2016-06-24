@@ -3,15 +3,11 @@
 
   {% include head.html %}
 
-  <body>
+  <body class="{{ page.class }}" data-mz="{{ page.class }}">
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
         {{ content }}
-      </div>
-    </div>
 
     {% include footer.html %}
 

@@ -1,8 +1,10 @@
 ---
 layout: post
-title:  "安家的第一天~!!"
-date:   2016-06-23 16:39:06 +0800
-categories: 生活
+title: 落叶~!!
+date: 2016-06-23 16:39:06 +0800
+categories: Life
+description: 安家的第一天
+keywords: 生活，家
 ---
 
 第一天在这里安家，内心狂欢有点小激动，话说第一次在Github Pages搭建Blog真不是件容易的事情。
