@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 联想总结——复盘的方法论！
-categories: Project Management
+categories: ProjectManagement
 description: 复盘方法论是基于联想深厚文化基础之上的，在联想，“复盘”是企业文化中的重要方法论之一，是指工作做完了再回顾一遍，目的是不断检验和校正目标，不断分析过程中的得失，便于改进，不断深化认识和总结规律。
 keywords: Project Management，项目管理，战略，企业文化
 ---
