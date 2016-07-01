@@ -53,3 +53,20 @@ sudo docker stop <CONTAINERS>
 <code>
 sudo docker ps -a
 <code>
+
+CentOS本地安装docker-registry
+
+<code>
+sudo yum install -y python-devel libevent-devel python-pip gcc xz-devel
+sudo pip install docker-registry
+sudo cp /usr/lib/python2.6/site-packages/config/config_sample.yml /usr/lib/python2.6/site-packages/config/config.yml
+sudo gunicorn -D --access-logfile - --error-logfile - -k gevent -b 0.0.0.0:5000 -w 4 --max-requests 100 docker_registry.wsgi:application
+<code>
+
+异步进入容器（在root下执行）
+
+<code>
+sudo docker ps
+sudo PID=$(docker inspect --format "{{ .State.Pid }}" <container>)
+sudo nsenter --target $PID --mount --uts --ipc --net --pid
+<code>
