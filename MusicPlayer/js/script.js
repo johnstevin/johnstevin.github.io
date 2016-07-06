@@ -10,7 +10,7 @@
 				artist: '徐若瑄',
 				album: '最爱是V',
 				cover:'images/1.gif',
-				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E7%88%B1%E7%AC%91%E7%9A%84%E7%9C%BC%E7%9D%9B%20-%20%E5%BE%90%E8%8B%A5%E7%91%84.mp3',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/%E7%88%B1%E7%AC%91%E7%9A%84%E7%9C%BC%E7%9D%9B%20-%20%E5%BE%90%E8%8B%A5%E7%91%84.mp3',
 				ogg: ''
 			},
 			{
@@ -18,15 +18,39 @@
 				artist: '薛之谦',
 				album: '绅士',
 				cover: 'images/132731360220331_4.jpg',
-				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E6%BC%94%E5%91%98%20-%20%E8%96%9B%E4%B9%8B%E8%B0%A6.mp3',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/%E6%BC%94%E5%91%98%20-%20%E8%96%9B%E4%B9%8B%E8%B0%A6.mp3',
 				ogg: ''
 			},
 			{
-				title: '追爱 - 张玮',
-				artist: '追爱 - 张玮',
+				title: '追爱',
+				artist: '张玮',
 				album: '北上广不相信眼泪 - 电视原声带',
 				cover: 'images/20130325084808733.jpg',
-				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E8%BF%BD%E7%88%B1%20-%20%E5%BC%A0%E7%8E%AE.mp3',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/%E8%BF%BD%E7%88%B1%20-%20%E5%BC%A0%E7%8E%AE.mp3',
+				ogg: ''
+			},
+			{
+				title: '最初的温柔',
+				artist: '赵乃吉',
+				album: '最初的温柔',
+				cover: 'images/20130325084808733.jpg',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/%E6%9C%80%E5%88%9D%E7%9A%84%E6%B8%A9%E6%9F%94%20-%20%E8%B5%B5%E4%B9%83%E5%90%89.mp3',
+				ogg: ''
+			},
+			{
+				title: 'Jar of Love',
+				artist: '曲婉婷',
+				album: '跨年演唱会2012-2013 华语篇2',
+				cover: 'images/20130325084808733.jpg',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/Jar%20of%20Love%20-%20%E6%9B%B2%E5%A9%89%E5%A9%B7.mp3',
+				ogg: ''
+			},
+			{
+				title: '李白',
+				artist: '李荣浩',
+				album: '模特',
+				cover: 'images/20130325084808733.jpg',
+				mp3: 'http://o9w2lbvnn.bkt.clouddn.com/music/%E6%9D%8E%E8%8D%A3%E6%B5%A9-%E6%9D%8E%E7%99%BD.mp3',
 				ogg: ''
 			}
 		];
