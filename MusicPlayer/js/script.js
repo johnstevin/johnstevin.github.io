@@ -10,7 +10,7 @@
 				artist: '徐若瑄',
 				album: '最爱是V',
 				cover:'images/1.gif',
-				mp3: '/assets/music/爱笑的眼睛 - 徐若瑄.mp3',
+				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E7%88%B1%E7%AC%91%E7%9A%84%E7%9C%BC%E7%9D%9B%20-%20%E5%BE%90%E8%8B%A5%E7%91%84.mp3',
 				ogg: ''
 			},
 			{
@@ -18,7 +18,7 @@
 				artist: '薛之谦',
 				album: '绅士',
 				cover: 'images/132731360220331_4.jpg',
-				mp3: '/assets/music/演员 - 薛之谦',
+				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E6%BC%94%E5%91%98%20-%20%E8%96%9B%E4%B9%8B%E8%B0%A6.mp3',
 				ogg: ''
 			},
 			{
@@ -26,7 +26,7 @@
 				artist: '追爱 - 张玮',
 				album: '北上广不相信眼泪 - 电视原声带',
 				cover: 'images/20130325084808733.jpg',
-				mp3: '/assets/music/追爱 - 张玮.mp3',
+				mp3: 'http://o9w1nx1kp.bkt.clouddn.com/%E8%BF%BD%E7%88%B1%20-%20%E5%BC%A0%E7%8E%AE.mp3',
 				ogg: ''
 			}
 		];
