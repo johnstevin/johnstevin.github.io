@@ -22,7 +22,8 @@ permalink: /about/
 * GitHub：[@johnstevin](https://github.com/johnstevin)
 * 博客：[{{ site.title }}]({{ site.url }})
 * 微博: [@AbangSir](http://weibo.com/AbangSir)
-* 知乎: [@Stevin](http://www.zhihu.com/people/stevin)
+* 知乎: [@cool2rong](https://www.zhihu.com/people/cool2rong)
+* 邮箱：[@Email](mailto://stevin.john@qq.com)
 
 ## Skill Keywords
 
