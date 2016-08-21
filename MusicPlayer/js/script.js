@@ -3,7 +3,7 @@
 	var repeat = localStorage.repeat || 0,
 		shuffle = localStorage.shuffle || 'false',
 		continous = true,
-		autoplay = true,
+		autoplay = false,
 		playlist = [
 			{
 				title: '爱笑的眼睛',
