@@ -1,3 +1,3 @@
-# johnstevin.github.io
+# 没劲
 
 #### 我很懒，懒到家了
