@@ -2,7 +2,7 @@
 layout: post
 title: 晕轮效应(光环效应)
 date: 2016-09-07 15:26:06 +0800
-categories: Management
+categories: Manage
 description: 
 keywords: 
 ---
