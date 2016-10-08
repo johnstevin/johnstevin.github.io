@@ -6,9 +6,41 @@ description: MYSQL-修改大表DDL工具pt-online-schema-change
 keywords: Mysql,编码,数据库
 ---
 
-官网：https://www.percona.com/downloads/percona-toolkit/
+#### MySQL DDL的问题现状
 
-安装方法见包内INSTALL文档
+在运维mysql数据库时，我们总会对数据表进行ddl 变更，修改添加字段或者索引，对于mysql 而已，ddl 显然是一个令所有MySQL dba 诟病的一个功能，因为在MySQL中在对表进行ddl时，会锁表，当表比较小比如小于1w上时，对前端影响较小，当时遇到千万级别的表 就会影响前端应用对表的写操作。
+
+目前InnoDB引擎是通过以下步骤来进行DDL的：
+
+1. 按照原始表（original_table）的表结构和DDL语句，新建一个不可见的临时表（tmp_table）
+2. 在原表上加write lock，阻塞所有更新操作（insert、delete、update等）
+3. 执行insert into tmp_table select * from original_table
+4. rename original_table和tmp_table，最后drop original_table
+5. 释放 write lock。
+
+我们可以看见在InnoDB执行DDL的时候，原表是只能读不能写的。为此 perconal 推出一个工具 pt-online-schema-change ，其特点是修改过程中不会造成读写阻塞。官网下载地址：https://www.percona.com/downloads/percona-toolkit/ ，安装方法见包内INSTALL文档。
+
+#### pt-online-schema-change工作原理：
+
+最大的优点：不锁表的情况下,修改表结构.该工具执行的基本流程如下:
+
+- 判断各种参数
+- 根据原表"t",创建一个名称为"_t_new"的新表
+- 执行ALTER TABLE语句修改新表"_t_new"
+- 创建3个触发器,名称格式为pt_osc_库名_表名_操作类型,比如
+```shell
+CREATE TRIGGER `pt_osc_dba_t_del` AFTER DELETE ON `dba`.`t` FOR EACH ROW DELETE IGNORE FROM `dba`.`_t_new` WHERE `dba`.`_t_new`.`id` <=> OLD.`id`
+CREATE TRIGGER `pt_osc_dba_t_upd` AFTER UPDATE ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
+CREATE TRIGGER `pt_osc_dba_t_ins` AFTER INSERT ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
+```
+- 开始复制数据,比如
+```shell
+INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id`, `a`, `b`, `c1` FROM `dba`.`t` LOCK IN SHARE MODE /*pt-online-schema-change 28014 copy table*/
+```
+- 复制完成后,交互原表和新表,执行RENAME命令,如 RENAME TABLE t to _t_old, _t_new to t;
+- 删除老表,_t_old
+- 删除触发器
+- 修改完成
 
 #### 解决报错问题：
 
