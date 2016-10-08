@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一条狗的爱情悲歌
-categories: LIFE
+categories: Life
 description: 大话西游之大圣娶亲-观影后感
 keywords: Life,爱情
 ---
