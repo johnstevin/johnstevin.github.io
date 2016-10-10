@@ -47,16 +47,25 @@ INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id
 
 #### 解决报错问题：
 
-> Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:
-> 解决办法：
-> sudo yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
+###### Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:
+> 
 
-Can't locate Time/HiRes.pm
 解决办法：
+
+sudo yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
+
+###### Can't locate Time/HiRes.pm
+>
+
+解决办法：
+
 sudo yum -y install perl-Time-HiRes
 
-Cannot connect to MySQL: Cannot connect to MySQL because the Perl DBI module is not installed or not found.
+###### Cannot connect to MySQL: Cannot connect to MySQL because the Perl DBI module is not installed or not found.
+>
+
 解决办法：
+
 yum install perl-DBI
 
 Character set 'utf8mb4' is not a compiled character set and is not specified in the '/usr/share/mysql/charsets/Index.xml' file
