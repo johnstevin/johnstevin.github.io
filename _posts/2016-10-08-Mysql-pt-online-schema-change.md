@@ -28,15 +28,18 @@ keywords: Mysql,编码,数据库
 - 根据原表"t",创建一个名称为"_t_new"的新表
 - 执行ALTER TABLE语句修改新表"_t_new"
 - 创建3个触发器,名称格式为pt_osc_库名_表名_操作类型,比如
-```shell
+
+```ruby
 CREATE TRIGGER `pt_osc_dba_t_del` AFTER DELETE ON `dba`.`t` FOR EACH ROW DELETE IGNORE FROM `dba`.`_t_new` WHERE `dba`.`_t_new`.`id` <=> OLD.`id`
 CREATE TRIGGER `pt_osc_dba_t_upd` AFTER UPDATE ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
 CREATE TRIGGER `pt_osc_dba_t_ins` AFTER INSERT ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
 ```
 - 开始复制数据,比如
-```shell
+
+```ruby
 INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id`, `a`, `b`, `c1` FROM `dba`.`t` LOCK IN SHARE MODE /*pt-online-schema-change 28014 copy table*/
 ```
+
 - 复制完成后,交互原表和新表,执行RENAME命令,如 RENAME TABLE t to _t_old, _t_new to t;
 - 删除老表,_t_old
 - 删除触发器
@@ -44,9 +47,9 @@ INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id
 
 #### 解决报错问题：
 
-Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:
-解决办法：
-sudo yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
+> Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:
+> 解决办法：
+> sudo yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
 
 Can't locate Time/HiRes.pm
 解决办法：
