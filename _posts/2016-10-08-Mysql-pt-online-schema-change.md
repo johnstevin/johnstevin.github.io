@@ -118,9 +118,9 @@ alter table online_table add primary key (id),modify id int not null auto_increm
 ```
 
 ```bash
-pt-online-schema-change --user=rongzhenbang --password=oMw^Szyqusqr2cu3sm --host=120.55.189.210  --alter "ADD COLUMN content text" D=med_data,t=online_table --print --dry-run
-pt-online-schema-change --user=rongzhenbang --password=oMw^Szyqusqr2cu3sm --host=120.55.189.210  --alter "ADD COLUMN content text" D=med_data,t=online_table --print --execute
-pt-online-schema-change --user=rongzhenbang --password=oMw^Szyqusqr2cu3sm --host=120.55.189.210  --alter "ADD INDEX idx_eventParam1 ( eventParam1 )" D=med_data,t=log_event_test --print --execute
+pt-online-schema-change --user=xxx --password=xxx --host=xxx  --alter "ADD COLUMN content text" D=med_data,t=online_table --print --dry-run
+pt-online-schema-change --user=xxx --password=xxx --host=xxx  --alter "ADD COLUMN content text" D=med_data,t=online_table --print --execute
+pt-online-schema-change --user=xxx --password=xxx --host=xxx  --alter "ADD INDEX idx_eventParam1 ( eventParam1 )" D=med_data,t=log_event_test --print --execute
 ```
 
 >
