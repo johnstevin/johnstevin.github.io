@@ -127,3 +127,29 @@ pt-online-schema-change --user=xxx --password=xxx --host=xxx  --alter "ADD INDEX
 备注：
 > 1千万数据，用时约15分钟
 
+#### 最后总结使用：
+
+- 增加字段：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "ADD COLUMN content text" D=aaa,t=tmp_test --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --print --execute
+```
+- 删除字段：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "DROP COLUMN content " D=aaa,t=tmp_test --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --quiet --execute
+```
+- 修改字段：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "MODIFY COLUMN age TINYINT NOT NULL DEFAULT 0" D=aaa,t=tmp_test --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --quiet --execute
+```
+- 字段改名：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "CHANGE COLUMN age address varchar(30)" D=aaa,t=tmp_test --no-check-alter --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --quiet --execut
+```
+- 增加索引：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "ADD INDEX idx_address(address)" D=aaa,t=tmp_test --no-check-alter --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --print --execute
+```
+- 删除索引：
+```sql
+pt-online-schema-change --user=root --password=123456 --host=192.168.200.25  --alter "DROP INDEX idx_address" D=aaa,t=tmp_test --no-check-alter --no-check-replication-filters --alter-foreign-keys-method=auto --recursion-method=none --print --execute
+```
