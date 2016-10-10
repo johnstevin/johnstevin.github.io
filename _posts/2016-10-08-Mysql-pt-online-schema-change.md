@@ -47,32 +47,33 @@ INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id
 
 #### 解决报错问题：
 
-###### Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:
-> 
+** Can't locate ExtUtils/MakeMaker.pm in @INC (@INC contains:**
 
 解决办法：
 
 sudo yum install perl-ExtUtils-CBuilder perl-ExtUtils-MakeMaker
 
-###### Can't locate Time/HiRes.pm
->
+** Can't locate Time/HiRes.pm**
 
 解决办法：
 
 sudo yum -y install perl-Time-HiRes
 
-###### Cannot connect to MySQL: Cannot connect to MySQL because the Perl DBI module is not installed or not found.
->
+**Cannot connect to MySQL: Cannot connect to MySQL because the Perl DBI module is not installed or not found.**
 
 解决办法：
 
 yum install perl-DBI
 
-Character set 'utf8mb4' is not a compiled character set and is not specified in the '/usr/share/mysql/charsets/Index.xml' file
-Character set 'utf8mb4' is not a compiled character set and is not specified in the '/usr/share/mysql/charsets/Index.xml' file
-Cannot connect to MySQL: DBI connect('test;host=127.0.0.1;mysql_read_default_group=client','root',...) failed: Can't initialize character set utf8mb4 (path: /usr/share/mysql/charsets/) at /usr/local/bin/pt-online-schema-change line 2282
+**Character set 'utf8mb4' is not a compiled character set and is not specified in the '/usr/share/mysql/charsets/Index.xml' file**
+**Character set 'utf8mb4' is not a compiled character set and is not specified in the '/usr/share/mysql/charsets/Index.xml' file**
+**Cannot connect to MySQL: DBI connect('test;host=127.0.0.1;mysql_read_default_group=client','root',...) failed: Can't initialize** **character set utf8mb4 (path: /usr/share/mysql/charsets/) at /usr/local/bin/pt-online-schema-change line 2282**
+
 解决办法：
+
 更改/usr/share/mysql/charsets/Index.xml 内容，将
+
+```
 <charset name="utf8">
   <family>Unicode</family>
   <description>UTF-8 Unicode</description>
@@ -100,6 +101,7 @@ Cannot connect to MySQL: DBI connect('test;host=127.0.0.1;mysql_read_default_gro
     <flag>compiled</flag>
   </collation>
 </charset>
+```
 
 #### 实验一
 CREATE TABLE `online_table` (
