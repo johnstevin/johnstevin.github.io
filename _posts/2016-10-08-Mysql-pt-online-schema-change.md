@@ -29,14 +29,14 @@ keywords: Mysql,编码,数据库
 - 执行ALTER TABLE语句修改新表"_t_new"
 - 创建3个触发器,名称格式为pt_osc_库名_表名_操作类型,比如
 
-```ruby
+```sql
 CREATE TRIGGER `pt_osc_dba_t_del` AFTER DELETE ON `dba`.`t` FOR EACH ROW DELETE IGNORE FROM `dba`.`_t_new` WHERE `dba`.`_t_new`.`id` <=> OLD.`id`
 CREATE TRIGGER `pt_osc_dba_t_upd` AFTER UPDATE ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
 CREATE TRIGGER `pt_osc_dba_t_ins` AFTER INSERT ON `dba`.`t` FOR EACH ROW REPLACE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) VALUES (NEW.`id`, NEW.`a`, NEW.`b`, NEW.`c1`)
 ```
 - 开始复制数据,比如
 
-```ruby
+```sql
 INSERT LOW_PRIORITY IGNORE INTO `dba`.`_t_new` (`id`, `a`, `b`, `c1`) SELECT `id`, `a`, `b`, `c1` FROM `dba`.`t` LOCK IN SHARE MODE /*pt-online-schema-change 28014 copy table*/
 ```
 
@@ -75,7 +75,7 @@ yum install perl-DBI
 
 更改/usr/share/mysql/charsets/Index.xml 内容，将
 
-```
+```xml
 <charset name="utf8">
   <family>Unicode</family>
   <description>UTF-8 Unicode</description>
@@ -123,9 +123,7 @@ pt-online-schema-change --user=rongzhenbang --password=oMw^Szyqusqr2cu3sm --host
 pt-online-schema-change --user=rongzhenbang --password=oMw^Szyqusqr2cu3sm --host=120.55.189.210  --alter "ADD INDEX idx_eventParam1 ( eventParam1 )" D=med_data,t=log_event_test --print --execute
 ```
 
-错误：
-DBD::mysql::db selectall_arrayref failed: Access denied; you need (at least one of) the REPLICATION SLAVE privilege(s) for this operation [for Statement "SHOW SLAVE HOSTS"] at /usr/local/bin/pt-online-schema-change line 4271.
-
-证明：
-1千万数据，用时约15分钟
+>
+备注：
+> 1千万数据，用时约15分钟
 
