@@ -1,3 +1,11 @@
+---
+layout: post
+title: 秒杀业务架构优化之路
+categories: softwareDesign
+description: 秒杀业务架构优化之路
+keywords: 软件设计,软件架构
+---
+
 原文出处：[这里](http://www.infoq.com/cn/articles/flash-deal-architecture-optimization)
 
 #### 一、秒杀业务为什么难做
