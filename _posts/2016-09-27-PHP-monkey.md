@@ -37,6 +37,30 @@ function monkey($n, $m) {
 }
 
 monkey(10, 4);
+
+/** 第二种解法 **/
+function monkey ($n = 0, $m = 0) {
+	$monkeys = range(1, $n);
+	$i = 0; // 跟踪索引号
+	$step = 0; // 步长计数器(排除剔除的猴子)
+	$unNum = 0; // 剔除计数器
+	while (1) {
+		if ($monkeys[$i] != 0) $step++; // 剔除的猴子不计数
+		if ($unNum >= $n) break;
+		if ($step == $m) {
+			$unNum++;
+			$temp = $monkeys[$i];
+			$monkeys[$i] = 0;
+			$step = 0;
+			echo "剔除 $temp 号猴子\n";
+		}
+		$i++;
+		if ($i >= $n) $i = 0; // 当索引号大于n
+	}
+}
+
+monkey(10, 6);
+
 ```
 
 JAVA编程
