@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 简单工厂、工厂方法模式、抽象工厂模式简介及区别
-categories: softwareDesign
+categories: SoftwareDesign
 description: 简单工厂、工厂方法模式、抽象工厂模式简介及区别
 keywords: 软件设计,软件架构
 ---

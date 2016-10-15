@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 秒杀业务架构优化之路
-categories: softwareDesign
+categories: SoftwareDesign
 description: 秒杀业务架构优化之路
 keywords: 软件设计,软件架构
 ---
