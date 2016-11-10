@@ -1,8 +1,8 @@
 ---
 layout: post
-title: php-fpm 重启
+title: php-fpm重启
 categories: PHP
-description: php-fpm 重启
+description: php-fpm重启
 keywords: Linux,命令,php
 ---
 
@@ -24,10 +24,10 @@ keywords: Linux,命令,php
 示例：
 
 php-fpm 关闭：
-```sh
+```shell
 kill -INT `cat /usr/local/php/var/run/php-fpm.pid`
 ```
 php-fpm 重启：
-```sh
+```shell
 kill -USR2 `cat /usr/local/php/var/run/php-fpm.pid`
 ```
