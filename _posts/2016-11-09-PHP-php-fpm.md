@@ -24,10 +24,13 @@ keywords: Linux,命令,php
 示例：
 
 php-fpm 关闭：
+
 ```shell
 kill -INT `cat /usr/local/php/var/run/php-fpm.pid`
 ```
+
 php-fpm 重启：
+
 ```shell
 kill -USR2 `cat /usr/local/php/var/run/php-fpm.pid`
 ```

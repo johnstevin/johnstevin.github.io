@@ -7,22 +7,29 @@ keywords: Linux,命令
 ---
 
 ## 查看内存使用
+
 ```shell
 free -m
 ```
+
 ## 优化内存
 
 - cache释放：
 
 To free pagecache:
+
 ```shell
 echo 1 > /proc/sys/vm/drop_caches
 ```
+
 To free dentries and inodes:
+
 ```shell
 echo 2 > /proc/sys/vm/drop_caches
 ```
+
 To free pagecache, dentries and inodes:
+
 ```shell
 echo 3 > /proc/sys/vm/drop_caches
 ```
@@ -36,6 +43,7 @@ echo 3 > /proc/sys/vm/drop_caches
 ## iostat：查看IO负载
 
 ## pstree：查看进程
+
 ```shell
 pstree -p 3020（进程号）
 ```
