@@ -1,3 +1,11 @@
+---
+layout: post
+title: PHP url解析
+categories: PHP
+description: PHP url解析
+keywords: PHP,url解析
+---
+
 ```php
 <?php
 $url = 'http://www.baidu.com/index.php?m=content&c=index&a=lists&catid=6&area=0&author=0&h=0&region=0&s=1&page=1';
